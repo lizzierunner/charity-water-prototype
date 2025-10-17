@@ -1,0 +1,125 @@
+
+/* ===============================
+	 Responsive Layouts (Mobile First)
+	 =============================== */
+
+/* Container max-widths for readability */
+.container, .main-area, .quiz-main-area, .impact-card, .results-page {
+	width: 100%;
+	max-width: 640px;
+	margin: 0 auto;
+	padding-left: var(--space-4);
+	padding-right: var(--space-4);
+}
+
+/* Touch targets */
+button, .avatar-card, .answer-button, .name-chip {
+	min-width: 44px;
+	min-height: 44px;
+}
+
+/* Avatar grid: 2 cols mobile */
+.avatar-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--space-4);
+}
+
+/* Answer grid: 1 col mobile */
+.answer-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-4);
+}
+
+/* Stats grid: 1 col mobile */
+.results-stats-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--space-4);
+}
+
+/* Hide sidebar by default (mobile) */
+.quiz-sidebar {
+	display: none;
+}
+
+/* ===============================
+	 Breakpoints
+	 =============================== */
+@media (min-width: 640px) {
+	/* sm: landscape phones */
+	.container, .main-area, .quiz-main-area, .impact-card, .results-page {
+		max-width: 768px;
+	}
+	.avatar-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.answer-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.results-stats-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 768px) {
+	/* md: tablets */
+	.container, .main-area, .quiz-main-area, .impact-card, .results-page {
+		max-width: 1024px;
+		padding-left: var(--space-8);
+		padding-right: var(--space-8);
+	}
+	.avatar-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.answer-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.results-stats-grid {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	.quiz-sidebar {
+		display: block;
+		width: 280px;
+		float: left;
+		margin-right: var(--space-8);
+	}
+	.quiz-main-area {
+		margin-left: 300px;
+	}
+}
+
+@media (min-width: 1024px) {
+	/* lg: desktops */
+	.container, .main-area, .quiz-main-area, .impact-card, .results-page {
+		max-width: 1280px;
+	}
+	.avatar-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+	.answer-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.results-stats-grid {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+@media (min-width: 1280px) {
+	/* xl: large desktops */
+	.container, .main-area, .quiz-main-area, .impact-card, .results-page {
+		max-width: 1440px;
+	}
+}
+
+/* Font size scaling with clamp for headings and main text is handled in globals.css */
+
+/* Adjust card/button sizes at breakpoints */
+.card, .stat-card, .avatar-card, .trophy-card {
+	padding: var(--space-8);
+}
+.btn, .btn-large, .cta-btn {
+	font-size: var(--font-lg);
+	min-height: 56px;
+}

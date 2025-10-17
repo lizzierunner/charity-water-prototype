@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="H2O Hero Quiz - Learn about water conservation and sustainability with charity: water's educational quiz app. Fun, interactive, and impactful!">
+	<title>H2O Hero Quiz - charity: water Education</title>
+	<link rel="stylesheet" href="styles/globals.css">
+	<link rel="stylesheet" href="styles/animations.css">
+	<link rel="stylesheet" href="styles/components.css">
+	<link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+	<main id="app" aria-label="H2O Hero Quiz Application">
+		<section id="landing-page" class="screen" aria-label="Landing Page" hidden>
+			<header class="hero-header" aria-label="H2O Hero Quiz Hero Section">
+				<!-- Animated water wave background -->
+				<div class="wave-bg" aria-hidden="true" data-anim="wave-background"></div>
+				<!-- Floating water droplet particles -->
+				<div class="particles-bg" aria-hidden="true" data-anim="droplet-particles"></div>
+				<div class="hero-content" role="presentation">
+					<h1 class="hero-title gradient-text" data-hero-title aria-label="H2O Hero Quiz">
+						H2O Hero Quiz
+					</h1>
+					<p class="hero-subtitle" data-hero-subtitle aria-label="charity: water mission">
+						Join charity: water’s mission to bring clean, safe water to everyone on the planet.
+					</p>
+					<section class="stats-cards" aria-label="Water Impact Statistics">
+						<article class="stat-card" data-stat="people-without-water" tabindex="0" aria-label="703 million people lack clean water">
+							<span class="stat-value">703 million</span>
+							<span class="stat-label">people lack clean water</span>
+						</article>
+						<article class="stat-card" data-stat="donations-to-projects" tabindex="0" aria-label="100% of donations go to water projects">
+							<span class="stat-value">100%</span>
+							<span class="stat-label">of donations go to water projects</span>
+						</article>
+						<article class="stat-card" data-stat="people-served" tabindex="0" aria-label="17+ million people served since 2006">
+							<span class="stat-value">17+ million</span>
+							<span class="stat-label">people served since 2006</span>
+						</article>
+					</section>
+					<button class="cta-btn" data-action="start-mission" aria-label="Start Your Mission" tabindex="0">
+						Start Your Mission
+					</button>
+				</div>
+			</header>
+			<footer class="hero-footer">
+				<div class="charity-water-logo" data-logo></div>
+			</footer>
+		</section>
+		<section id="avatar-selection" class="screen" aria-label="Avatar Selection" hidden>
+			<header class="avatar-header">
+				<h2 class="avatar-title" aria-label="Choose Your Water Hero">Choose Your Water Hero</h2>
+				<p class="avatar-subtitle">Select your character for this mission</p>
+			</header>
+			<main class="avatar-main" aria-label="Avatar Selection Grid">
+				<div class="avatar-grid" role="list" aria-label="Available Avatars">
+					<button class="avatar-card" data-avatar="water-mage" aria-label="Water Mage" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🧙‍♂️</span>
+						<span class="avatar-name">Water Mage</span>
+					</button>
+					<button class="avatar-card" data-avatar="ocean-warrior" aria-label="Ocean Warrior" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🌊</span>
+						<span class="avatar-name">Ocean Warrior</span>
+					</button>
+					<button class="avatar-card" data-avatar="hydro-engineer" aria-label="Hydro Engineer" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">👷‍♀️</span>
+						<span class="avatar-name">Hydro Engineer</span>
+					</button>
+					<button class="avatar-card" data-avatar="rain-shaman" aria-label="Rain Shaman" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🌧️</span>
+						<span class="avatar-name">Rain Shaman</span>
+					</button>
+					<button class="avatar-card" data-avatar="aqua-scientist" aria-label="Aqua Scientist" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🔬</span>
+						<span class="avatar-name">Aqua Scientist</span>
+					</button>
+					<button class="avatar-card" data-avatar="tide-ranger" aria-label="Tide Ranger" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🏄‍♂️</span>
+						<span class="avatar-name">Tide Ranger</span>
+					</button>
+					<button class="avatar-card" data-avatar="bubble-guardian" aria-label="Bubble Guardian" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🫧</span>
+						<span class="avatar-name">Bubble Guardian</span>
+					</button>
+					<button class="avatar-card" data-avatar="wave-rider" aria-label="Wave Rider" tabindex="0">
+						<span class="avatar-emoji" aria-hidden="true">🏄‍♀️</span>
+						<span class="avatar-name">Wave Rider</span>
+					</button>
+				</div>
+			</main>
+			<nav class="avatar-nav" aria-label="Avatar Selection Navigation">
+				<button class="back-btn" data-action="back" aria-label="Back to previous step">Back</button>
+				<button class="next-btn" data-action="next" aria-label="Next step" disabled>Next</button>
+			</nav>
+			<div class="progress-indicator" aria-label="Progress">
+				<span>Step 1 of 5</span>
+			</div>
+			<footer class="avatar-footer">
+				<div class="charity-water-logo" data-logo></div>
+			</footer>
+		</section>
+		<section id="name-input" class="screen" aria-label="Name Input" hidden>
+			<header class="name-header">
+				<h2 class="name-title" aria-label="What's your hero name?">What's your hero name?</h2>
+			</header>
+			<div class="selected-avatar-display">
+				<span class="avatar-emoji" id="selected-avatar-emoji" aria-hidden="true"></span>
+				<span class="avatar-name" id="selected-avatar-name"></span>
+			</div>
+			<form class="name-form" autocomplete="off" aria-label="Hero Name Form" onsubmit="return false;">
+				<label for="hero-name-input" class="visually-hidden">Hero Name</label>
+				<input type="text" id="hero-name-input" class="hero-name-input" name="hero-name" placeholder="Enter your hero name" maxlength="20" aria-label="Hero Name" autocomplete="off" required data-input="hero-name">
+				<span class="char-counter" id="char-counter" aria-live="polite">0/20</span>
+				<div class="validation-error hidden" id="name-error" aria-live="assertive" role="alert"></div>
+			</form>
+			<section class="suggested-names" aria-label="Suggested Hero Names">
+				<p>Or choose a suggested name:</p>
+				<div class="suggested-names-chips">
+					<button type="button" class="name-chip" data-suggested-name="Captain Splash">Captain Splash</button>
+					<button type="button" class="name-chip" data-suggested-name="The Hydrator">The Hydrator</button>
+					<button type="button" class="name-chip" data-suggested-name="Aqua Guardian">Aqua Guardian</button>
+					<button type="button" class="name-chip" data-suggested-name="River Runner">River Runner</button>
+					<button type="button" class="name-chip" data-suggested-name="Splash Master">Splash Master</button>
+					<button type="button" class="name-chip" data-suggested-name="Wave Whisperer">Wave Whisperer</button>
+				</div>
+			</section>
+			<nav class="name-nav" aria-label="Name Input Navigation">
+				<button class="back-btn" data-action="back" aria-label="Back to previous step">Back</button>
+				<button class="next-btn" data-action="next" aria-label="Next step" disabled>Next</button>
+			</nav>
+			<div class="progress-indicator" aria-label="Progress">
+				<span>Step 2 of 5</span>
+			</div>
+		</section>
+		<section id="character-confirmation" class="screen" aria-label="Character Confirmation" hidden>
+			<div class="character-confirm-bg" aria-hidden="true" data-anim="water-particles"></div>
+			<header class="confirmation-header">
+				<h2 class="confirmation-title">Ready to start?</h2>
+			</header>
+			<div class="character-card pulse-glow" aria-label="Selected Hero Card">
+				<span class="hero-avatar large-emoji" id="confirm-hero-emoji" aria-hidden="true"></span>
+				<div class="hero-info">
+					<span class="hero-name" id="confirm-hero-name"></span>
+					<span class="level-badge">Level 1</span>
+					<span class="xp-display">0 XP</span>
+				</div>
+			</div>
+			<section class="mission-briefing-card" aria-label="Mission Briefing">
+				<h3>Your Mission</h3>
+				<ul>
+					<li>Answer 10 questions about water crisis</li>
+					<li>Earn XP for correct answers</li>
+					<li>Learn about charity: water's impact</li>
+					<li>Unlock achievements and rankings</li>
+				</ul>
+			</section>
+			<nav class="confirmation-nav" aria-label="Confirmation Navigation">
+				<button class="start-mission-btn" data-action="start-mission" aria-label="Start Mission!">Start Mission!</button>
+				<button class="back-edit-btn" data-action="back-edit" aria-label="Back to Edit">Back to Edit</button>
+			</nav>
+			<footer class="confirmation-footer">
+				<div class="charity-water-logo" data-logo></div>
+			</footer>
+		</section>
+		<section id="quiz-screen" class="screen" aria-label="Quiz Screen" hidden>
+			<aside class="quiz-sidebar desktop-only" aria-label="Character Info Sidebar">
+				<div class="character-info-card">
+					<span class="avatar-emoji" id="quiz-avatar-emoji" aria-hidden="true"></span>
+					<span class="hero-name" id="quiz-hero-name"></span>
+					<div class="level-xp">
+						<span class="level-badge" id="quiz-level-badge">Level 1</span>
+						<div class="xp-bar-container">
+							<div class="xp-bar" id="quiz-xp-bar"></div>
+						</div>
+					</div>
+					<div class="lives-display" aria-label="Lives">
+						<span class="life" aria-label="Life">💧</span>
+						<span class="life" aria-label="Life">💧</span>
+						<span class="life" aria-label="Life">💧</span>
+					</div>
+					<div class="streak-combo">
+						<span class="streak" aria-label="Streak"><span class="flame">🔥</span> <span id="quiz-streak">0</span></span>
+						<span class="combo-badge" id="quiz-combo">x1</span>
+					</div>
+					<div class="question-progress" aria-label="Question Progress">
+						<span id="quiz-question-progress">1/10</span>
+					</div>
+				</div>
+			</aside>
+			<div class="quiz-main-area">
+				<header class="quiz-mobile-header mobile-only" aria-label="Mobile Character Info">
+					<span class="avatar-emoji" id="quiz-mobile-avatar" aria-hidden="true"></span>
+					<span class="hero-name" id="quiz-mobile-hero-name"></span>
+					<div class="lives-display">
+						<span class="life">💧</span>
+						<span class="life">💧</span>
+						<span class="life">💧</span>
+					</div>
+					<span class="mobile-question-progress" id="quiz-mobile-question-progress">1/10</span>
+				</header>
+				<div class="quiz-progress-bar-container">
+					<div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+				</div>
+				<div class="challenge-indicator hidden" id="challenge-indicator" aria-live="polite">
+					<span class="trophy" aria-hidden="true">🏆</span>
+					<span class="challenge-badge">Challenge Question - 2x XP!</span>
+					<span class="challenge-warning">Wrong answer = -20 XP penalty</span>
+				</div>
+				<section class="question-card" aria-label="Quiz Question">
+					<div class="question-text" id="quiz-question-text"></div>
+					<div class="question-decorations" aria-hidden="true">
+						<span class="water-droplet">💧</span>
+						<span class="water-droplet">💧</span>
+					</div>
+				</section>
+				<div class="answer-grid">
+					<button class="answer-btn" data-answer="0">Answer 1</button>
+					<button class="answer-btn" data-answer="1">Answer 2</button>
+					<button class="answer-btn" data-answer="2">Answer 3</button>
+					<button class="answer-btn" data-answer="3">Answer 4</button>
+				</div>
+				<div class="feedback-overlay" id="quiz-feedback-overlay" aria-live="assertive"></div>
+				<footer class="quiz-footer">
+					<div class="charity-water-logo" data-logo></div>
+				</footer>
+			</div>
+		</section>
+		<section id="impact-story" class="screen impact-modal" aria-label="Impact Story" hidden>
+			<div class="impact-bg-anim" aria-hidden="true" data-anim="impact-background"></div>
+			<div class="impact-card" role="dialog" aria-modal="true" aria-labelledby="impact-story-header">
+				<header class="impact-header">
+					<h2 id="impact-story-header">Real Impact Story</h2>
+					<span class="impact-icon" id="impact-story-icon" aria-hidden="true">🌊</span>
+				</header>
+				<div class="impact-content">
+					<h3 class="impact-title" id="impact-story-title">A Well for Hope Village</h3>
+					<div class="impact-story-text" id="impact-story-text">
+						<p>In Hope Village, Ethiopia, access to clean water was once a daily struggle. Women and children walked miles to collect water from unsafe sources, risking their health and safety.</p>
+						<p>Thanks to a charity: water project, a new well was built in the heart of the community. Now, families have clean, safe water just steps from their homes.</p>
+						<p>Children spend more time in school, and parents can focus on work and family. The entire village has been transformed by the gift of water.</p>
+						<p>Since completion, the well has provided over 1,000,000 liters of clean water, improving health and opportunity for all.</p>
+					</div>
+					<div class="impact-metrics">
+						<div class="metric-box">
+							<span class="metric-label">People Served</span>
+							<span class="metric-value" id="impact-people-served">350</span>
+						</div>
+						<div class="metric-box">
+							<span class="metric-label">Days Since Completion</span>
+							<span class="metric-value" id="impact-days-since">420</span>
+						</div>
+						<div class="metric-box">
+							<span class="metric-label">Cost Per Person</span>
+							<span class="metric-value" id="impact-cost-per-person">$30</span>
+						</div>
+					</div>
+				</div>
+				<button class="continue-quiz-btn" data-action="continue-quiz" aria-label="Continue Quiz">Continue Quiz</button>
+				<div class="impact-progress-indicator">
+					<span id="impact-quiz-progress">Question 5 of 10</span>
+				</div>
+				<footer class="impact-footer">
+					<div class="charity-water-logo" data-logo></div>
+				</footer>
+			</div>
+		</section>
+		<section id="results-page" class="screen" aria-label="Results Page" hidden>
+			<div class="results-bg-anim" aria-hidden="true" data-anim="results-background"></div>
+			<div id="confetti-container" class="confetti-overlay" aria-hidden="true"></div>
+			<div id="celebration-container" class="celebration-overlay" aria-hidden="true"></div>
+			<header class="results-header">
+				<h2>Mission Complete! <span aria-hidden="true">🎉</span></h2>
+			</header>
+			<div class="score-display">
+				<span class="score-value" id="results-score">8/10</span>
+			</div>
+			<div class="character-summary-card">
+				<span class="avatar-emoji" id="results-avatar-emoji" aria-hidden="true"></span>
+				<span class="hero-name" id="results-hero-name"></span>
+				<span class="level-badge" id="results-final-level"></span>
+			</div>
+			<div class="trophy-ranking-card">
+				<span class="trophy-emoji" id="results-trophy" aria-hidden="true">🥇</span>
+				<span class="rank-title" id="results-rank-title">Water Champion</span>
+				<span class="percentage-score" id="results-percentage">80%</span>
+				<span class="congrats-message" id="results-congrats">Amazing job! You’re a true H2O Hero!</span>
+				<span class="celebration-emoji" id="results-celebration-emoji" aria-hidden="true">🎊</span>
+			</div>
+			<div class="results-stats-grid">
+				<div class="stat-card">
+					<span class="stat-icon" aria-hidden="true">⚡</span>
+					<span class="stat-label">XP Earned</span>
+					<span class="stat-value" id="results-xp">1200</span>
+				</div>
+				<div class="stat-card">
+					<span class="stat-icon" aria-hidden="true">🎯</span>
+					<span class="stat-label">Correct Answers</span>
+					<span class="stat-value" id="results-correct">8</span>
+				</div>
+				<div class="stat-card">
+					<span class="stat-icon" aria-hidden="true">🔥</span>
+					<span class="stat-label">Best Streak</span>
+					<span class="stat-value" id="results-streak">5</span>
+				</div>
+				<div class="stat-card">
+					<span class="stat-icon" aria-hidden="true">🏆</span>
+					<span class="stat-label">Total Questions</span>
+					<span class="stat-value" id="results-total">10</span>
+				</div>
+			</div>
+			<div class="social-share-section">
+				<button class="share-btn twitter" data-action="share-twitter" aria-label="Share to Twitter">Share to Twitter</button>
+				<button class="share-btn facebook" data-action="share-facebook" aria-label="Share to Facebook">Share to Facebook</button>
+				<button class="share-btn copy-link" data-action="copy-link" aria-label="Copy result link">Copy Link</button>
+			</div>
+			<section class="donation-section" aria-label="charity: water donation">
+				<h3>Turn Knowledge Into Action</h3>
+				<button class="donate-btn" data-action="donate" aria-label="Donate to charity: water">Donate</button>
+				<div class="powered-by">
+					<span>Powered by</span>
+					<div class="charity-water-logo" data-logo></div>
+				</div>
+			</section>
+			<button class="play-again-btn" data-action="play-again" aria-label="Play Again">Play Again</button>
+		</section>
+		<div id="confetti-container" aria-hidden="true"></div>
+		<div id="celebration-container" aria-hidden="true"></div>
+	</main>
+	<script src="js/app.js"></script>
+	<script src="js/screens/landing-page.js"></script>
+	<script src="js/screens/avatar-selection.js"></script>
+	<script src="js/screens/name-input.js"></script>
+	<script src="js/screens/character-confirmation.js"></script>
+	<script src="js/screens/quiz-screen.js"></script>
+	<script src="js/screens/impact-story.js"></script>
+	<script src="js/screens/results-page.js"></script>
+	<script src="js/components/confetti.js"></script>
+	<script src="js/components/win-celebration.js"></script>
+	<script src="js/components/charity-water-logo.js"></script>
+	<script src="js/components/particles.js"></script>
+	<script src="js/utils/state-manager.js"></script>
+	<script src="js/utils/animations.js"></script>
+	<script src="js/utils/helpers.js"></script>
+	<script src="js/data/quiz-questions.js"></script>
+	<script src="js/data/avatars.js"></script>
+	<script src="js/data/impact-stories.js"></script>
+	<script src="js/data/constants.js"></script>
+</body>
+</html>

@@ -205,10 +205,6 @@ export function renderAnswers(answers) {
 	});
 }
 
-function updateProgressBar(idx, total) {
-	const bar = document.getElementById('quiz-progress-bar');
-	if (bar) bar.style.width = `${((idx + 1) / total) * 100}%`;
-}
 
 function updateLivesStreakCombo() {
 	// Update lives, streak, combo UI

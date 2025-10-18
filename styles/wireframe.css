@@ -1,0 +1,301 @@
+/* H2O Hero Quiz Wireframe Styles */
+
+/* Box sizing for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.wireframe-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border: 2px solid #000;
+}
+
+.wireframe-mobile {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #f5f5f5;
+  border: 2px solid #000;
+  padding: 20px;
+}
+
+.wireframe-header {
+  text-align: center;
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.wireframe-title {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #000;
+}
+
+.wireframe-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-top: 8px;
+}
+
+.wireframe-section {
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  background: #fff;
+}
+
+.wireframe-section-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
+  color: #000;
+}
+
+.wireframe-text {
+  font-size: 16px;
+  color: #000;
+}
+.wireframe-text-small {
+  font-size: 12px;
+  color: #000;
+}
+.wireframe-text-large {
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+.wireframe-button {
+  border: 2px solid #000;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  margin: 4px 0;
+}
+.wireframe-button:hover:not(:disabled) {
+  background: #eee;
+}
+.wireframe-button:disabled {
+  background: #f5f5f5;
+  color: #888;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+.wireframe-button-primary {
+  background: #000;
+  color: #fff;
+}
+
+.wireframe-input {
+  border: 2px solid #000;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.wireframe-label {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.wireframe-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.wireframe-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.wireframe-avatar {
+  border: 2px solid #000;
+  padding: 16px;
+  cursor: pointer;
+  text-align: center;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.wireframe-avatar:hover {
+  border-color: #888;
+  box-shadow: 0 2px 8px #ccc;
+}
+.wireframe-avatar.selected {
+  border-width: 4px;
+  border-color: #000;
+}
+.wireframe-avatar-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 8px auto;
+  background: #fff;
+}
+
+.wireframe-stat {
+  border: 2px solid #000;
+  padding: 12px;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 8px;
+}
+.wireframe-stat-label {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  color: #888;
+  margin-bottom: 2px;
+}
+.wireframe-stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.wireframe-placeholder {
+  border: 2px dashed #888;
+  padding: 20px;
+  color: #888;
+  text-align: center;
+  background: #fff;
+}
+
+.wireframe-card {
+  border: 2px solid #000;
+  padding: 20px;
+  background: #fff;
+}
+.wireframe-card-header {
+  border-bottom: 2px solid #000;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #000;
+}
+
+.wireframe-progress-bar {
+  border: 2px solid #000;
+  width: 100%;
+  height: 20px;
+  background: #fff;
+  position: relative;
+  margin-bottom: 12px;
+}
+.wireframe-progress-fill {
+  background: #000;
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+.wireframe-navigation {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #000;
+  padding-top: 12px;
+  margin-top: 20px;
+}
+.wireframe-breadcrumb {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #888;
+}
+
+.wireframe-quiz-sidebar {
+  border: 2px solid #000;
+  padding: 20px;
+  background: #fff;
+}
+.wireframe-quiz-question {
+  border: 2px solid #000;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+.wireframe-quiz-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.wireframe-answer {
+  border: 2px solid #000;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.wireframe-answer:hover {
+  background: #eee;
+  border-color: #888;
+  transform: scale(1.03);
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+  .wireframe-container {
+    max-width: 900px;
+    padding: 32px;
+  }
+  .wireframe-section {
+    padding: 32px;
+  }
+  .wireframe-grid-2 {
+    gap: 32px;
+  }
+  .wireframe-grid-4 {
+    gap: 32px;
+  }
+  .wireframe-avatar {
+    padding: 24px;
+  }
+  .wireframe-card {
+    padding: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .wireframe-container {
+    max-width: 1200px;
+    padding: 40px;
+  }
+  .wireframe-section {
+    padding: 40px;
+  }
+  .wireframe-grid-2 {
+    gap: 40px;
+  }
+  .wireframe-grid-4 {
+    gap: 40px;
+  }
+  .wireframe-avatar {
+    padding: 32px;
+  }
+  .wireframe-card {
+    padding: 40px;
+  }
+}

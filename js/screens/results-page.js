@@ -122,8 +122,10 @@ export function setupPlayAgainButton() {
 				StateManager.resetState();
 				navigateToScreen('landing-page');
 				// Clear celebration effects
-				document.getElementById('confetti-container')?.innerHTML = '';
-				document.getElementById('celebration-container')?.innerHTML = '';
+				const confetti = document.getElementById('confetti-container');
+				if (confetti) confetti.innerHTML = '';
+				const celebration = document.getElementById('celebration-container');
+				if (celebration) celebration.innerHTML = '';
 			}
 		};
 	}
@@ -239,44 +241,3 @@ export function renderCharacterSummary() {
 	if (levelBadge) levelBadge.textContent = `Level ${Math.max(1, Math.floor((AppState.xp || 0) / 500) + 1)}`;
 }
 
-function renderTrophyCard(trophy, percentage) {
-	const trophyEl = document.getElementById('results-trophy');
-	const rankTitle = document.getElementById('results-rank-title');
-	const percentEl = document.getElementById('results-percentage');
-	const messageEl = document.getElementById('results-congrats');
-	const emojiEl = document.getElementById('results-celebration-emoji');
-	if (trophyEl) trophyEl.textContent = trophy.emoji;
-	if (rankTitle) rankTitle.textContent = trophy.title;
-	if (percentEl) percentEl.textContent = `${percentage}%`;
-	if (messageEl) messageEl.textContent = trophy.message;
-	if (emojiEl) emojiEl.textContent = trophy.emoji;
-	// Add tier class for celebration effect
-	const card = document.querySelector('.trophy-ranking-card');
-	if (card) {
-		card.className = `trophy-ranking-card celebration-${trophy.tier}`;
-	}
-}
-
-function renderStatsGrid(score, xp, maxStreak, total) {
-	document.getElementById('results-xp')?.textContent = xp;
-	document.getElementById('results-correct')?.textContent = score;
-	document.getElementById('results-streak')?.textContent = maxStreak;
-	document.getElementById('results-total')?.textContent = total;
-}
-
-function setupShareButtons() {
-	// Add share logic for Twitter, Facebook, Copy Link
-}
-
-function setupPlayAgainButton() {
-	const btn = document.querySelector('.play-again-btn');
-	if (btn) btn.onclick = playAgain;
-}
-
-function triggerConfetti(intensity) {
-	// Trigger confetti animation based on intensity
-}
-
-function triggerCelebrationEffects(tier) {
-	// Trigger celebration overlay/effects based on tier
-}

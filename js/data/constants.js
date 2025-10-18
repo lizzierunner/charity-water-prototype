@@ -27,11 +27,11 @@ export const CONFETTI_INTENSITY_HIGH = 150;
 export const CONFETTI_INTENSITY_EXTREME = 250;
 
 export const BRAND_COLORS = {
-	blue: '#1A5F7A',
-	aqua: '#57C5B6',
-	orange: '#FF6B35',
-	yellow: '#FFC72C',
-	lightBlue: '#4FC3F7'
+	 blue: '#009fe3', // charity: water accent blue
+	 yellow: '#ffd600', // charity: water yellow
+	 black: '#222', // charity: water black
+	 white: '#fff', // charity: water white
+	 gray: '#f5f5f5', // charity: water gray
 };
 
 export const TROPHY_RANKS = {

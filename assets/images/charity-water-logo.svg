@@ -1,0 +1,5 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="40" rx="8" fill="#ffd600"/>
+  <path d="M30 10 L40 30 L20 30 Z" fill="#222"/>
+  <text x="50" y="26" font-family="Montserrat, Arial, Helvetica Neue, sans-serif" font-size="18" fill="#222" font-weight="bold">charity: water</text>
+</svg>

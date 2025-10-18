@@ -20,7 +20,7 @@ export function renderTrophyCard(rankData, percentage) {
 		card.className = `trophy-ranking-card celebration-${rankData.tier} animate-bounce`;
 		if (rankData.tier === 'legendary') {
 			card.classList.add('shimmer', 'pulse-glow');
-			card.style.background = 'linear-gradient(90deg, #FFD700, #FF6B35, #57C5B6, #FFD700)';
+			card.style.background = 'linear-gradient(90deg, var(--cw-yellow), var(--cw-blue), var(--cw-yellow))';
 		}
 		setTimeout(() => card.classList.remove('animate-bounce'), 900);
 	}
@@ -31,10 +31,10 @@ export function renderTrophyCard(rankData, percentage) {
 // ===============================
 export function renderStatsGrid(score, xp, maxStreak, total) {
 	const stats = [
-		{ icon: '⚡', value: xp, label: 'XP Earned', color: 'var(--cw-yellow)' },
-		{ icon: '🎯', value: score, label: 'Correct Answers', color: '#2ecc40' },
-		{ icon: '🔥', value: maxStreak, label: 'Best Streak', color: 'var(--cw-orange)' },
-		{ icon: '🏆', value: total, label: 'Total Questions', color: 'var(--cw-blue)' },
+		{ icon: '\u26a1', value: xp, label: 'XP Earned', color: 'var(--cw-yellow)' },
+		{ icon: '\ud83c\udfaf', value: score, label: 'Correct Answers', color: 'var(--cw-blue)' },
+		{ icon: '\ud83d\udd25', value: maxStreak, label: 'Best Streak', color: 'var(--cw-yellow)' },
+		{ icon: '\ud83c\udfc6', value: total, label: 'Total Questions', color: 'var(--cw-blue)' },
 	];
 	const grid = document.querySelector('.results-stats-grid');
 	if (!grid) return;
@@ -42,7 +42,8 @@ export function renderStatsGrid(score, xp, maxStreak, total) {
 	stats.forEach((stat, i) => {
 		const card = document.createElement('div');
 		card.className = 'stat-card';
-		card.style.background = stat.color;
+		card.style.background = `var(--cw-white)`;
+		card.style.border = `2px solid ${stat.color}`;
 		card.innerHTML = `
 			<span class="stat-icon animate-rotate">${stat.icon}</span>
 			<span class="stat-value" id="stat-value-${i}">0</span>
@@ -66,6 +67,15 @@ export function renderStatsGrid(score, xp, maxStreak, total) {
 		}
 		requestAnimationFrame(animate);
 	});
+	// Add charity: water logo to results page header
+	const resultsHeader = document.querySelector('.results-header');
+	if (resultsHeader && !resultsHeader.querySelector('.charity-water-logo')) {
+		const logo = document.createElement('img');
+		logo.src = 'assets/images/charity-water-logo.svg';
+		logo.alt = 'charity: water logo';
+		logo.className = 'charity-water-logo';
+		resultsHeader.prepend(logo);
+	}
 }
 
 // ===============================
